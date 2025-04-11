@@ -30,6 +30,7 @@ vim.keymap.set('n', '<leader>sm', builtin.marks, {})
 vim.keymap.set('n', '<leader>sc', builtin.colorscheme, {})
 
 -- testing lazygit
+-- anothfdsakl tjksalf jdksl
 --
 -- Git
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
