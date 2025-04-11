@@ -29,9 +29,6 @@ vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>sm', builtin.marks, {})
 vim.keymap.set('n', '<leader>sc', builtin.colorscheme, {})
 
--- testing lazygit
--- anothfdsakl tjksalf jdksl
---
 -- Git
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
 vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
