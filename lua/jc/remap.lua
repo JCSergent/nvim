@@ -38,8 +38,11 @@ vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
 
--- Mini Files
-vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>');
+-- Oil
+vim.keymap.set('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', { silent = true });
+
+-- LazyGit
+vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<CR>', {})
 
 -- Toggle Term
 vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm direction=horizontal<CR>', {})
