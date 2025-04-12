@@ -44,6 +44,9 @@ vim.keymap.set('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', { sil
 -- LazyGit
 vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<CR>', {})
 
+-- Projects
+vim.keymap.set('n', '<leader>sp', '<cmd>NeovimProjectDiscover history<CR>', {})
+
 -- Toggle Term
 vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm direction=horizontal<CR>', {})
 vim.keymap.set('n', '<leader>tn', '<cmd>TermNew direction=horizontal<CR>', {})
