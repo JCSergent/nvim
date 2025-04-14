@@ -2,7 +2,7 @@ return {
     {
         'saghen/blink.cmp',
         dependencies = 'rafamadriz/friendly-snippets',
-        version = 'v0.*',
+        version = '*',
         opts = {
             keymap = { preset = 'enter' },
             appearance = {
@@ -10,7 +10,12 @@ return {
                 nerd_font_variant = 'mono'
             },
             signature = { enabled = true },
+            completion = {
+                documentation = { auto_show = true },
+                -- list = {
+                --     selection = { preselect = false, auto_insert = true }
+                -- }
+            },
         },
     }
 }
-

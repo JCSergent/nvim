@@ -28,6 +28,7 @@ vim.keymap.set('n', '<leader>sb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, {})
 vim.keymap.set('n', '<leader>sm', builtin.marks, {})
 vim.keymap.set('n', '<leader>sc', builtin.colorscheme, {})
+vim.keymap.set('n', '<leader>sa', builtin.builtin, {})
 
 -- Git
 vim.keymap.set('n', '<leader>gf', builtin.git_files, {})
@@ -35,8 +36,8 @@ vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 
 -- LSP
-vim.keymap.set('n', '<leader>gd', builtin.lsp_definitions, {})
-vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
+vim.keymap.set('n', 'gd', function () builtin.lsp_definitions({ jump_type = "split" }) end, {})
+vim.keymap.set('n', 'gr', builtin.lsp_references, {})
 
 -- Oil
 vim.keymap.set('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', { silent = true });

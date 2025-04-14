@@ -4,7 +4,6 @@ return {
         build = ":TSUpdate",
         config = function()
             require("nvim-treesitter.configs").setup({
-                -- A list of parser names, or "all"
                 ensure_installed = {
                     "vim",
                     "vimdoc",
@@ -13,9 +12,13 @@ return {
                     "lua",
                     "jsdoc",
                     "bash",
-                    "cpp"
+                    "cpp",
+                    "gdscript"
                 },
+                ignore_install = {},
                 auto_install = true,
+                sync_install = true,
+                modules = {},
                 indent = {
                     enable = true
                 },

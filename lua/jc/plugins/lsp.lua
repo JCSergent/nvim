@@ -31,11 +31,21 @@ return {
 
             require("mason-lspconfig").setup_handlers {
                 function(server_name)
-                    local capabilities = require('blink.cmp').get_lsp_capabilities()
+                    local capabilities = vim.lsp.protocol.make_client_capabilities()
+                    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
                     require("lspconfig")[server_name].setup { capabilities = capabilities }
                 end
             }
         end
 	},
-    { "neovim/nvim-lspconfig" }
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = { 'saghen/blink.cmp' },
+        config = function ()
+            local capabilities = vim.lsp.protocol.make_client_capabilities()
+            capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+            require("lspconfig").gdscript.setup({ capabilities = capabilities })
+        end
+
+    }
 }
