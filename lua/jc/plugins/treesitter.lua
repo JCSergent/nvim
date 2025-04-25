@@ -44,6 +44,8 @@ return {
                     additional_vim_regex_highlighting = false,
                 },
             })
+            -- Windows Specific and will be removed in a future version
+            require("nvim-treesitter.install").prefer_git = false
         end
     },
 }
