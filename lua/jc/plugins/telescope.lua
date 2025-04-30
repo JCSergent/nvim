@@ -7,7 +7,9 @@ return {
 
     config = function()
         require('telescope').setup({
-            defaults = require("telescope.themes").get_ivy(),
+            defaults = require("telescope.themes").get_ivy({
+                file_ignore_patterns = { "%.uid" }
+            }),
             pickers = {
                 colorscheme = {
                     enable_preview = true,

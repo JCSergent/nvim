@@ -40,6 +40,13 @@ return {
                 override = function(conf)
                     return conf
                 end,
+            },
+            view_options = {
+                is_hidden_file = function(name, bufnr)
+                    local m = name:match("^%.")
+                    if m == nil then m = name:match(".uid$") end
+                    return m ~= nil
+                end
             }
         })
     end
