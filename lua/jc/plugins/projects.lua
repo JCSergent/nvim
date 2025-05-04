@@ -4,7 +4,9 @@ return {
         projects = {
             "C:/projects/*",
             "C:/projects/Godot/*",
-            "~/AppData/Local/nvim/"
+            "~/AppData/Local/nvim/",
+            "~/projects/*",
+            "~/.config/*",
         },
         picker = {
             type = "telescope",
