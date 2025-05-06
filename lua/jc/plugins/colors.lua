@@ -1,12 +1,15 @@
 return {
     {
         "folke/tokyonight.nvim",
+        config = function()
+            vim.cmd([[colorscheme tokyonight-night]])
+        end
     },
     {
         "catppuccin/nvim",
-        config = function()
-            vim.cmd([[colorscheme catppuccin]])
-        end
+        -- config = function()
+        --     vim.cmd([[colorscheme catppuccin]])
+        -- end
     },
     {
         "EdenEast/nightfox.nvim",
