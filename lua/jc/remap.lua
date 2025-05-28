@@ -38,12 +38,16 @@ vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 -- LSP
 vim.keymap.set('n', 'gd', function () builtin.lsp_definitions({ jump_type = "split" }) end, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+vim.keymap.set('n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', {})
 
 -- Oil
 vim.keymap.set('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', { silent = true });
 
 -- LazyGit
-vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<CR>', {})
+vim.keymap.set('n', '<leader>lg', '<cmd>LazyGit<CR>', {})
+
+-- LazyDocker
+vim.keymap.set('n', '<leader>ld', '<cmd>Lazydocker<CR>', {})
 
 -- Projects
 vim.keymap.set('n', '<leader>sp', '<cmd>NeovimProjectDiscover history<CR>', {})

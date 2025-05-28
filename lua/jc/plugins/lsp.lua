@@ -1,16 +1,16 @@
 return {
 	{
-		"williamboman/mason.nvim",
+		"mason-org/mason.nvim",
 		lazy = false,
 		config = function()
 			require("mason").setup()
 		end,
 	},
 	{
-		"williamboman/mason-lspconfig.nvim",
+		"mason-org/mason-lspconfig.nvim",
 		lazy = false,
         dependencies = {
-            'saghen/blink.cmp',
+            -- 'saghen/blink.cmp',
             {
                 "folke/lazydev.nvim",
                 opts = {
@@ -26,26 +26,15 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = { "lua_ls", "ts_ls" },
-                automatic_installation = true
+                automatic_enable = true
             })
 
-            require("mason-lspconfig").setup_handlers {
-                function(server_name)
-                    local capabilities = vim.lsp.protocol.make_client_capabilities()
-                    capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-                    require("lspconfig")[server_name].setup { capabilities = capabilities }
-                end
-            }
+            for i, server_name in ipairs(require("mason-lspconfig").get_installed_servers()) do
+                local capabilities = vim.lsp.protocol.make_client_capabilities()
+                -- capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+                vim.lsp.config(server_name, { capabilities = capabilities })
+            end
         end
 	},
-    {
-        "neovim/nvim-lspconfig",
-        dependencies = { 'saghen/blink.cmp' },
-        config = function ()
-            local capabilities = vim.lsp.protocol.make_client_capabilities()
-            capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-            require("lspconfig").gdscript.setup({ capabilities = capabilities })
-        end
-
-    }
+    { "neovim/nvim-lspconfig" }
 }

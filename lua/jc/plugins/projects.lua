@@ -3,13 +3,15 @@ return {
     opts = {
         projects = {
             "C:/projects/*",
-            "C:/projects/Godot/*",
             "~/AppData/Local/nvim/"
         },
         picker = {
             type = "telescope",
             opts = {
                 theme = "ivy"
+            },
+            preview = {
+                enabled = false
             }
         }
     },

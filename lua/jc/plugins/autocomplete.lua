@@ -2,7 +2,7 @@ return {
     {
         'saghen/blink.cmp',
         dependencies = 'rafamadriz/friendly-snippets',
-        version = '*',
+        version = '1.*',
         opts = {
             keymap = { preset = 'enter' },
             appearance = {
@@ -16,6 +16,7 @@ return {
                 --     selection = { preselect = false, auto_insert = true }
                 -- }
             },
+            fuzzy = { implementation = 'lua' }
         },
     }
 }
