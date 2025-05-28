@@ -28,9 +28,9 @@ vim.keymap.set("n", "<C-k>", "<cmd>lua require('vscode').action('workbench.actio
 vim.keymap.set("n", "<C-l>", "<cmd>lua require('vscode').action('workbench.action.focusRightGroup')<CR>")
 
 -- VSCode Editor Management
--- vim.keymap.set("n", "<leader>wh", "<cmd>lua require('vscode').action('workbench.action.splitEditorRight')<CR>")
+vim.keymap.set("n", "<leader>vs", "<cmd>lua require('vscode').action('workbench.action.splitEditorRight')<CR>")
+vim.keymap.set("n", "<leader>hs", "<cmd>lua require('vscode').action('workbench.action.splitEditorDown')<CR>")
 -- vim.keymap.set("n", "<leader>wj", "<cmd>lua require('vscode').action('workbench.action.splitEditorUp')<CR>")
--- vim.keymap.set("n", "<leader>wk", "<cmd>lua require('vscode').action('workbench.action.splitEditorDown')<CR>")
 -- vim.keymap.set("n", "<leader>wl", "<cmd>lua require('vscode').action('workbench.action.splitEditorLeft')<CR>")
 -- vim.keymap.set("n", "<leader>ww", "<cmd>lua require('vscode').action('workbench.action.closeEditorsInGroup')<CR>")
 -- vim.keymap.set("n", "<leader>wa", "<cmd>lua require('vscode').action('workbench.action.closeAllGroups')<CR>")

@@ -31,7 +31,7 @@ return {
 
             for i, server_name in ipairs(require("mason-lspconfig").get_installed_servers()) do
                 local capabilities = vim.lsp.protocol.make_client_capabilities()
-                -- capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+                -- cafabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
                 vim.lsp.config(server_name, { capabilities = capabilities })
             end
         end
