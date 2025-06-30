@@ -38,6 +38,7 @@ vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 -- LSP
 vim.keymap.set('n', 'gd', function () builtin.lsp_definitions({ jump_type = "split" }) end, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+vim.keymap.set('n', 'gh', vim.diagnostic.open_float, {})
 
 -- Oil
 vim.keymap.set('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', { silent = true });
