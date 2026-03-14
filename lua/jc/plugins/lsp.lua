@@ -34,6 +34,14 @@ return {
                 capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
                 vim.lsp.config(server_name, { capabilities = capabilities })
             end
+
+            -- local capabilities = vim.lsp.protocol.make_client_capabilities()
+            -- capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+            -- vim.lsp.config('gdscript', {
+            --   cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+            --   filetypes = { 'gdscript' },
+            --   capabilities = capabilities
+            -- })
         end
 	},
     {
@@ -42,7 +50,12 @@ return {
         config = function ()
             local capabilities = vim.lsp.protocol.make_client_capabilities()
             capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
-            vim.lsp.config('gdscript', { capabilities = capabilities })
+            vim.lsp.config('gdscript', {
+              cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+              filetypes = { 'gdscript' },
+              capabilities = capabilities
+            })
+            vim.lsp.enable('gdscript')
         end
     }
 }

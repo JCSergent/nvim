@@ -36,10 +36,11 @@ vim.keymap.set('n', '<leader>gs', builtin.git_status, {})
 vim.keymap.set('n', '<leader>gb', builtin.git_branches, {})
 
 -- LSP
-vim.keymap.set('n', 'gd', function () builtin.lsp_definitions({ jump_type = "split" }) end, {})
-vim.keymap.set('n', 'gr', builtin.lsp_references, {})
-vim.keymap.set('n', 'gh', vim.diagnostic.open_float, {})
-
+vim.keymap.set('n', '<leader>gd', function () builtin.lsp_definitions({ jump_type = "split" }) end, {})
+vim.keymap.set('n', '<leader>gr', builtin.lsp_references, {})
+vim.keymap.set('n', '<leader>ga', vim.lsp.buf.code_action, {})
+vim.keymap.set('n', '<leader>gh', vim.lsp.buf.hover, {})
+vim.keymap.set('n', '<leader>ge', function () vim.diagnostic.open_float(nil, {focus=false}) end, {})
 -- Oil
 vim.keymap.set('n', '<leader>e', ':lua require("oil").toggle_float()<CR>', { silent = true });
 
@@ -57,7 +58,7 @@ vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], {})
 vim.keymap.set('t', '<C-v>', [[<C-\><C-n>]], {})
 
 -- Run a build.bat file in the working directory
-vim.keymap.set('n','<leader>b',':!build<CR>')
+vim.keymap.set('n','<leader>b',':!./build.sh<CR>')
 
 -- I will eventually try remapping Esc to CapsLock.
 -- But until then, I will be using Ctrl-C
@@ -72,3 +73,6 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- USE GHOSTTY BACKGROUND (MAY WANT TO REMOVE THIS)
+-- vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+-- vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })

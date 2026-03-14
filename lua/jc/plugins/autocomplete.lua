@@ -11,10 +11,15 @@ return {
             },
             signature = { enabled = true },
             completion = {
-                documentation = { auto_show = true },
+
+                menu = { border = 'single' },
+                -- documentation = { window = { border = 'single' } },
+                documentation = { auto_show = true, window = { border = 'single' } },
+                accept = { auto_brackets = { enabled = false }, },
                 -- list = {
-                --     selection = { preselect = false, auto_insert = true }
-                -- }
+                --     selection = { preselect = true, auto_insert = false }
+                -- },
+                -- ghost_text = { enabled = true },
             },
         },
     }
